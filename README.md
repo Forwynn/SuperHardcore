@@ -17,8 +17,8 @@ upgrades.
 ## Changes this plugin makes
 
 - Players only have **6 max health** (3 hearts)
-- Monsters deal **3.25× more damage** to players
-- Players deal only **40%** of their normal damage
+- Monsters deal **3× more damage** to players
+- Players deal only **45%** of their normal damage
 - Every creeper that spawns is **charged**
 - Creepers move **faster** and almost **no knockback** (good luck punching them away)
 - Spiders always get one random strong effect: Speed, Strength, Regeneration, or Invisibility (level 2, forever)

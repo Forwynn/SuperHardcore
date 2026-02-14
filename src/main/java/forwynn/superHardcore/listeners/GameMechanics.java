@@ -31,12 +31,12 @@ public class GameMechanics implements Listener
 	{
 		if (event.getDamager() instanceof Monster && event.getEntity() instanceof Player)
 		{
-			event.setDamage(event.getDamage() * 3.25);
+			event.setDamage(event.getDamage() * 3);
 		}
 
 		if (event.getDamager() instanceof Player)
 		{
-			event.setDamage(event.getDamage() * 0.4);
+			event.setDamage(event.getDamage() * 0.45);
 		}
 	}
 

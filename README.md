@@ -1,6 +1,8 @@
 # SuperHardcore
 A Spigot/Paper Minecraft plugin that enhances the survival experience.
 
+[![Build Spigot Plugin](https://github.com/Forwynn/SuperHardcore/actions/workflows/build.yml/badge.svg)](https://github.com/Forwynn/SuperHardcore/actions/workflows/build.yml)
+
 > [!WARNING]
 > Experimental code ahead! This plugin may cause unintended bugs with other plugins.
 > This plugin is based on 1.21.x and could potentially break in future versions.

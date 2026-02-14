@@ -16,7 +16,8 @@ upgrades.
 
 ## Changes this plugin makes
 
-- Players only have **6 max health** (3 hearts)
+- Players only have **8 max health** (4 hearts)
+    - Players will see they have "full" health, but they truly have 8 health points
 - Monsters deal **3× more damage** to players
 - Players deal only **45%** of their normal damage
 - Every creeper that spawns is **charged**

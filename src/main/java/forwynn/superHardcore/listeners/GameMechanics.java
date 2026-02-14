@@ -23,7 +23,10 @@ public class GameMechanics implements Listener
 	{
 		event.getPlayer()
 				.getAttribute(Attribute.MAX_HEALTH)
-				.setBaseValue(6);
+				.setBaseValue(8);
+
+		event.getPlayer().setHealthScaled(true);
+		event.getPlayer().setHealthScale(20.0);
 	}
 
 	@EventHandler

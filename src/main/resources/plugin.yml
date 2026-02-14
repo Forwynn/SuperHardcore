@@ -1,0 +1,6 @@
+name: SuperHardcore
+version: '1.0-SNAPSHOT'
+main: forwynn.superHardcore.SuperHardcore
+api-version: '1.21'
+authors: [ Foreverably ]
+description: A Spigot/Paper Minecraft plugin that enhances the survival experience.

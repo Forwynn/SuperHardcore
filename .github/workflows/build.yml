@@ -27,5 +27,5 @@ jobs:
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
-          name: spigot-plugin
+          name: SuperHardcore
           path: target/*.jar

@@ -17,17 +17,18 @@ public class GameMechanics implements Listener
 	{
 		event.getPlayer()
 				.getAttribute(Attribute.MAX_HEALTH)
-				.setBaseValue(10);
+				.setBaseValue(6);
 	}
 
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent event)
 	{
-		if (event.getDamager() instanceof Monster && event.getEntity() instanceof Player)
+		if (event.getDamager() instanceof Monster  && event.getEntity() instanceof Player)
 			event.setDamage(event.getDamage() * 3.25);
 
 		if (event.getDamager() instanceof Player)
 			event.setDamage(event.getDamage() * 0.4);
+
 	}
 
 	@EventHandler
@@ -36,8 +37,9 @@ public class GameMechanics implements Listener
 		if (event.getEntity() instanceof Creeper creeper)
 		{
 			creeper.setPowered(true);
-			creeper.setFuseTicks(2);
+			creeper.setFuseTicks(1);
 			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.65);
+			creeper.getAttribute(Attribute.FOLLOW_RANGE).setBaseValue(10);
 		}
 	}
 }

@@ -37,7 +37,7 @@ public class GameMechanics implements Listener
 		{
 			creeper.setPowered(true);
 			creeper.setFuseTicks(5);
-			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(1.5);
+			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.65);
 		}
 	}
 }

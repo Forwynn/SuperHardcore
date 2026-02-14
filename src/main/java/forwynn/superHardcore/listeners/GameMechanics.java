@@ -1,17 +1,23 @@
 package forwynn.superHardcore.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.entity.Creeper;
-import org.bukkit.entity.Monster;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.event.entity.*;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import java.util.Random;
 
 public class GameMechanics implements Listener
 {
+
+	private final Random random = new Random();
+
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event)
 	{
@@ -23,23 +29,79 @@ public class GameMechanics implements Listener
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent event)
 	{
-		if (event.getDamager() instanceof Monster  && event.getEntity() instanceof Player)
+		if (event.getDamager() instanceof Monster && event.getEntity() instanceof Player)
+		{
 			event.setDamage(event.getDamage() * 3.25);
+		}
 
 		if (event.getDamager() instanceof Player)
+		{
 			event.setDamage(event.getDamage() * 0.4);
-
+		}
 	}
 
 	@EventHandler
-	public void onCreeperSpawn(EntitySpawnEvent event)
+	public void onEntitySpawn(EntitySpawnEvent event)
 	{
 		if (event.getEntity() instanceof Creeper creeper)
 		{
 			creeper.setPowered(true);
 			creeper.setFuseTicks(1);
-			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.65);
-			creeper.getAttribute(Attribute.FOLLOW_RANGE).setBaseValue(10);
+			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.6);
+			creeper.getAttribute(Attribute.KNOCKBACK_RESISTANCE).setBaseValue(10);
+		}
+
+		if (event.getEntity() instanceof Spider spider)
+		{
+			PotionEffectType[] effects = {
+					PotionEffectType.SPEED,
+					PotionEffectType.STRENGTH,
+					PotionEffectType.REGENERATION,
+					PotionEffectType.INVISIBILITY
+			};
+			PotionEffectType randomEffect = effects[random.nextInt(effects.length)];
+			spider.addPotionEffect(new PotionEffect(randomEffect, Integer.MAX_VALUE, 2));
 		}
 	}
+
+	@EventHandler
+	public void onSkeletonBurn(EntityCombustEvent event)
+	{
+		if (event instanceof EntityCombustByBlockEvent || event instanceof EntityCombustByEntityEvent)
+		{
+			return;
+		}
+
+		if (!(event.getEntity() instanceof Skeleton))
+		{
+			return;
+		}
+
+		LivingEntity mob = (LivingEntity) event.getEntity();
+
+		if (mob.getEquipment() != null)
+		{
+			ItemStack helmet = mob.getEquipment().getHelmet();
+			if (helmet != null && helmet.getType() != Material.AIR)
+			{
+				return;
+			}
+		}
+
+		event.setCancelled(true);
+	}
+
+	@EventHandler
+	public void onEndermanWaterDamage(EntityDamageEvent event)
+	{
+		if (event.getEntity() instanceof Enderman)
+		{
+			if (event.getCause() == EntityDamageEvent.DamageCause.DROWNING)
+			{
+				event.setCancelled(true);
+			}
+		}
+	}
+
+
 }

@@ -31,7 +31,7 @@ upgrades.
 1. Put the .jar file in your server's `plugins` folder
     - This plugin works on both Spigot and Paper
 2. Restart the server
-3. Enjoy (or suffer 😅)
+3. Enjoy (or suffer)
 
 ## Contributing
 
@@ -39,7 +39,7 @@ Want to help make it even harder or fix bugs?
 
 1. Fork the repo
 2. Make your changes in a new branch
-3. Open a pull request 😄
+3. Open a pull request
 
 Any ideas, bug fixes, or new scary features are welcome!
 

@@ -24,10 +24,10 @@ public class GameMechanics implements Listener
 	public void onDamage(EntityDamageByEntityEvent event)
 	{
 		if (event.getDamager() instanceof Monster && event.getEntity() instanceof Player)
-			event.setDamage(event.getDamage() * 2.5);
+			event.setDamage(event.getDamage() * 3);
 
 		if (event.getDamager() instanceof Player)
-			event.setDamage(event.getDamage() * 0.5);
+			event.setDamage(event.getDamage() * 0.4);
 	}
 
 	@EventHandler

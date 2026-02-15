@@ -11,7 +11,7 @@ A Spigot/Paper plugin that makes Minecraft survival **way harder** and more exci
 It changes vanilla Minecraft to feel like true modern hardcore survival should feel: hazardous, very tense, no easy
 mode.
 
-You start with only **3 hearts** and mobs hit **much harder**. Players deal less damage. And some mobs got scary
+You start with only **4 hearts** and mobs hit **much harder**. Players deal less damage. And some mobs got scary
 upgrades.
 
 ## Changes this plugin makes
@@ -31,7 +31,7 @@ upgrades.
 1. Put the .jar file in your server's `plugins` folder
     - This plugin works on both Spigot and Paper
 2. Restart the server
-3. Enjoy (or suffer 😅)
+3. Enjoy (or suffer)
 
 ## Contributing
 
@@ -39,7 +39,7 @@ Want to help make it even harder or fix bugs?
 
 1. Fork the repo
 2. Make your changes in a new branch
-3. Open a pull request 😄
+3. Open a pull request
 
 Any ideas, bug fixes, or new scary features are welcome!
 

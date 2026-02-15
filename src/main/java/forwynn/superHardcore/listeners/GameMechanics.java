@@ -49,8 +49,7 @@ public class GameMechanics implements Listener
 		if (event.getEntity() instanceof Creeper creeper)
 		{
 			creeper.setPowered(true);
-			creeper.setFuseTicks(1);
-			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.6);
+			creeper.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.45);
 			creeper.getAttribute(Attribute.KNOCKBACK_RESISTANCE).setBaseValue(10);
 		}
 

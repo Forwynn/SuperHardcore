@@ -25,6 +25,7 @@ upgrades.
 - Spiders always get one random strong effect: Speed, Strength, Regeneration, or Invisibility (level 2, forever)
 - Skeletons **don't burn** in daylight anymore
 - Endermen **don't take damage** from water / rain
+- Shields now allow 25% of the blocked incoming damage to go through and damage you
 
 ## How to install
 

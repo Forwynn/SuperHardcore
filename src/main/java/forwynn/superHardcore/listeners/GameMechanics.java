@@ -29,9 +29,27 @@ public class GameMechanics implements Listener
 		event.getPlayer().setHealthScale(20.0);
 	}
 
+
+	@EventHandler
+	public void onShieldDamage(EntityDamageByEntityEvent event)
+	{
+		if (!(event.getEntity() instanceof Player)) return;
+
+		if (event.getDamage(EntityDamageEvent.DamageModifier.BLOCKING) < 0)
+		{
+
+			double originalDamage = event.getDamage(EntityDamageEvent.DamageModifier.BASE);
+
+			double damageToThru = originalDamage * 0.25;
+
+			event.setDamage(EntityDamageEvent.DamageModifier.BLOCKING, -(originalDamage - damageToThru));
+		}
+	}
+
 	@EventHandler
 	public void onDamage(EntityDamageByEntityEvent event)
 	{
+
 		if (event.getDamager() instanceof Monster && event.getEntity() instanceof Player)
 		{
 			event.setDamage(event.getDamage() * 3);
